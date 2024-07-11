@@ -1,0 +1,7 @@
+[2024-05-31 05:16:29.940] [WARN ] Existing wallet file not found
+[2024-05-31 05:16:29.940] [WARN ] Existing client file not found
+[2024-05-31 05:16:29.941] [WARN ] Failed to initialize coordinator client
+[2024-05-31 05:16:44.956] [WARN ] Failed to initialize shard status client
+[2024-05-31 05:16:44.957] [ERROR] Failed to send transaction to coordinator
+[2024-05-31 05:16:44.957] [ERROR] Failed to send mint tx
+81f76f8f13ba02abc12b7a4a03fa695001756afb466fff75c1b252eb5017fe2b

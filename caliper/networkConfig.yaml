@@ -1,0 +1,71 @@
+name: Fabric
+version: "2.0.0"
+
+caliper:
+  blockchain: fabric
+  sutOptions:
+    mutualTls: false
+
+channels:
+  - channelName: mychannel
+    contracts:
+    - id: testgo
+  
+organizations:
+  - mspid: Org1MSP
+    identities:
+      certificates:
+      - name: 'Admin@example.com'
+        admin: true
+        clientPrivateKey:
+          pem: |-
+            -----BEGIN PRIVATE KEY-----
+            MIGHAgEAMBMGByqGSM49AgEGCCqGSM49AwEHBG0wawIBAQQgxlRAZ1Vl9ygmTagx
+            RjieI2JnKVl2laeu7W9GymeO5bOhRANCAASb+elek3aHSro89RjWbyTnSJcjOiDM
+            DhoBReoJsrFSu8eZaEMm03PaBGwO1AA4P2absghHM6smcYNj8JO0AdUL
+            -----END PRIVATE KEY-----
+        clientSignedCert:
+          pem: |-
+            -----BEGIN CERTIFICATE-----
+            MIICozCCAkqgAwIBAgIUJ0mIE9lZJSBOR7n2tw0Rod2ffJ4wCgYIKoZIzj0EAwIw
+            cDELMAkGA1UEBhMCVVMxFzAVBgNVBAgTDk5vcnRoIENhcm9saW5hMQ8wDQYDVQQH
+            EwZEdXJoYW0xGTAXBgNVBAoTEG9yZzEuZXhhbXBsZS5jb20xHDAaBgNVBAMTE2Nh
+            Lm9yZzEuZXhhbXBsZS5jb20wHhcNMjQwNjAyMTQ1NDAwWhcNMjUwNjAyMTQ1OTAw
+            WjBgMQswCQYDVQQGEwJVUzEXMBUGA1UECBMOTm9ydGggQ2Fyb2xpbmExFDASBgNV
+            BAoTC0h5cGVybGVkZ2VyMQ4wDAYDVQQLEwVhZG1pbjESMBAGA1UEAxMJb3JnMWFk
+            bWluMFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEm/npXpN2h0q6PPUY1m8k50iX
+            IzogzA4aAUXqCbKxUrvHmWhDJtNz2gRsDtQAOD9mm7IIRzOrJnGDY/CTtAHVC6OB
+            0TCBzjAOBgNVHQ8BAf8EBAMCB4AwDAYDVR0TAQH/BAIwADAdBgNVHQ4EFgQUjpqF
+            wTyuVidpn7U94P2g7xZiwcowHwYDVR0jBBgwFoAUrQ5lyPG/lLew/gpem5xA2zNp
+            1k4wEQYDVR0RBAowCIIGdWJ1bnR1MFsGCCoDBAUGBwgBBE97ImF0dHJzIjp7Imhm
+            LkFmZmlsaWF0aW9uIjoiIiwiaGYuRW5yb2xsbWVudElEIjoib3JnMWFkbWluIiwi
+            aGYuVHlwZSI6ImFkbWluIn19MAoGCCqGSM49BAMCA0cAMEQCID48lgbQ2Q5gfOkl
+            AOBSC8TCOyfK10SStu2gRh5npiwoAiBqx2lAgMa1ZwwmCl/Xj+DJe8muNHJfsley
+            GJpqH68G7Q==
+            -----END CERTIFICATE-----
+
+            
+    peers:
+      - endpoint: localhost:7051
+        grpcOptions:
+          ssl-target-name-override: peer0.org1.example.com
+          grpc.keepalive_time_ms: 600000
+        tlsCACerts:
+          pem: |-
+              -----BEGIN CERTIFICATE-----
+              MIICJzCCAc2gAwIBAgIUUPVPEl6Oqsm8zrMfocFDiGp3qOIwCgYIKoZIzj0EAwIw
+              cDELMAkGA1UEBhMCVVMxFzAVBgNVBAgTDk5vcnRoIENhcm9saW5hMQ8wDQYDVQQH
+              EwZEdXJoYW0xGTAXBgNVBAoTEG9yZzEuZXhhbXBsZS5jb20xHDAaBgNVBAMTE2Nh
+              Lm9yZzEuZXhhbXBsZS5jb20wHhcNMjQwNjAyMTQ1NDAwWhcNMzkwNTMwMTQ1NDAw
+              WjBwMQswCQYDVQQGEwJVUzEXMBUGA1UECBMOTm9ydGggQ2Fyb2xpbmExDzANBgNV
+              BAcTBkR1cmhhbTEZMBcGA1UEChMQb3JnMS5leGFtcGxlLmNvbTEcMBoGA1UEAxMT
+              Y2Eub3JnMS5leGFtcGxlLmNvbTBZMBMGByqGSM49AgEGCCqGSM49AwEHA0IABJEl
+              ZEcc/q1tTacSSsCibm1C+5E61SCsOrMsZMLmFwbwnRYGTz69wNwFlKgv5nlLFsOE
+              5pzq+R4UHpjSzksH3aajRTBDMA4GA1UdDwEB/wQEAwIBBjASBgNVHRMBAf8ECDAG
+              AQH/AgEBMB0GA1UdDgQWBBStDmXI8b+Ut7D+Cl6bnEDbM2nWTjAKBggqhkjOPQQD
+              AgNIADBFAiEAkuBqZSVfEGCsyyrfo23vgmtJQVzDh7Rb7nOvbT0bjWwCIBqFsQIH
+              j4l/TiodNFzgcvSl5jDP156+SjaIa30i4Ssl
+              -----END CERTIFICATE-----
+
+      
+
